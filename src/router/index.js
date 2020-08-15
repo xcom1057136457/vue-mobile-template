@@ -1,17 +1,35 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import login from '../views/login.vue'
+import actList from '../views/actList'
 
 Vue.use(VueRouter)
 
-const routes = [{
-    redirect: '/login',
+const routes = [
+  {
+    redirect: '/actList',
     path: '/'
+  },
+  {
+    path: '*',
+    redirect: '/login'
   },
   {
     path: '/login',
     name: 'login',
-    component: () => import("../views/login.vue")
-  }
+    component: login,
+    meta: {
+      keepAlive: false,
+    }
+  },
+  {
+    path: '/actList',
+    name: 'actList',
+    component: actList,
+    meta: {
+      keepAlive: false,
+    }
+  },
 ]
 
 const router = new VueRouter({

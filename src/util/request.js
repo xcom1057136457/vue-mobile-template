@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-axios.defaults.baseURL = "http://xiaomiao.club:6677";
+// axios.defaults.baseURL = "http://xiaomiao.club:6677";
 
 axios.defaults.withCredentials = true;
 
